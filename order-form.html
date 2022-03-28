@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Нове замовлення</title>
+  <link rel="icon" type="image/x-icon" href="./img/icon.png">
+  <link href="libs/selectizejs/selectize.min.css" rel="stylesheet">
+  <link href="styles/style.css" rel="stylesheet">
+
+  <script src="libs/jquery-3.5.0.min.js"></script>
+  <script src="libs/selectizejs/standalone.selectize.min.js"></script>
+  <script src="libs/selectizejs/selectize.min.js"></script>
+  <script src="scripts/full-data.js"></script>
+  <script src="scripts/script.js"></script>
+</head>
+
+<body>
+  <div class="background"></div>
+  
+  <div class="order-form-wrapper">
+    <div class="order-form-container">
+      <form class="order-form" method="post" action="">
+      <div class="logo-wrapper">
+        <img src="./img/logo.png" alt="Fora logo">
+        <div class="title">Магазин солодощів</div>
+      </div>
+
+      <div class="text-wrapper">
+        Виберіть заклад, в якому вам буде найзручніше забрати замовлення або з якого ви хотіли б отримати доставку. 
+        Але після 20 години заявку опрацюємо вже наступного ранку.
+      </div>
+
+      <div class="types-wrapper">
+          <input class="isHidden" type="radio" id="delivery-type-input"
+                 name="delivery_type" value="1" checked onclick="setType(0)">
+          <label for="delivery-type-input" id="noDelivery">Самовивіз </label>
+          <input class="isHidden" type="radio" id="delivery-type-pickup"
+                 name="delivery_type" value="2" onclick="setType(1)">
+          <label for="delivery-type-pickup" id="isDelivery">Доставка </label>
+      </div>
+
+      <div class="fields-wrapper">
+        <div class="delivery_city-select-wrapper"></div>
+        <div class="delivery_store-select-wrapper"></div>
+
+        <input type="hidden" name="redirect_url" value="http://shop.fora.iir.fozzy.lan/">
+        <input type="hidden" name="delivery_store_address" id="delivery-store-addr-input" value>
+        <input type="hidden" name="delivery_city_name" id="delivery-city-name-input" value>
+        <input type="hidden" name="delivery_region_id" id="delivery-region-id-input" value>
+        <input type="hidden" name="delivery_region_name" id="delivery-region-name-input" value>
+
+        <div class="send-btn-wrapper">
+          <button class="send-btn" type="submit">Обрати</button>
+        </div>
+      </div>
+    </form>
+    </div>
+  </div>
+</body>
+</html>
